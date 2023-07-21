@@ -13,9 +13,10 @@ const userRouter = require('./Routes/userRoutes.js');
 const reviewRouter = require('./Routes/reviewRoutes.js');
 const viewRouter = require('./Routes/viewRoutes.js');
 const bookingRouter = require('./Routes/bookingRoutes.js');
-const appError = require('./Util/appError');
-const errorMiddleware = require('./routeHandlers/errorController');
+const appError = require('./Util/appError.js');
+const errorMiddleware = require('./routeHandlers/errorController.js');
 const ExpressMongoSanitize = require('express-mongo-sanitize');
+const compression = require('compression');
 const app = express();
 //Global MIDDLEWARES
 
@@ -143,6 +144,8 @@ app.use(
     ]
   })
 );
+
+app.use(compression());
 
 //ROUTERS MIDDLEWARES
 

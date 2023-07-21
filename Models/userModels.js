@@ -102,7 +102,7 @@ userSchema.methods.createPasswordResetToken = function() {
     .update(resetToken)
     .digest('hex');
   this.passwordResetExpires = Date.now() + 10 * 60 * 1000; //The duration is 10 minutes from current date. We convert 10 minutes into milliseconds because now() returns milliseconds
-  console.log(resetToken, this.passwordResetToken, this.passwordResetExpires);
+  // console.log(resetToken, this.passwordResetToken, this.passwordResetExpires);
   return resetToken;
 };
 

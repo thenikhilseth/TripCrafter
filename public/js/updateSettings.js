@@ -1,21 +1,21 @@
 /*eslint-disable*/
 const userFormData = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.formPassword');
-console.log('Hello');
-console.log(userPasswordForm);
+// console.log('Hello');
+// console.log(userPasswordForm);
 
 const updateData = async (name, email) => {
   try {
     alert('enter updateData axios');
     const res = await axios({
       method: 'PATCH',
-      url: 'http://127.0.0.1:8000/api/v1/users/updateMe',
+      url: '/api/v1/users/updateMe',
       data: {
         name,
         email
       }
     });
-    console.log(name, email);
+    // console.log(name, email);
     if (res.data.status === 'success') {
       alert('Success', 'Data Updated Successfully!');
     }
@@ -28,7 +28,7 @@ const updatePassword = async (currentPassword, password, passwordConfirm) => {
   try {
     const res = await axios({
       method: 'PATCH',
-      url: 'http://127.0.0.1:8000/api/v1/users/updatePassword',
+      url: '/api/v1/users/updatePassword',
       data: {
         currentPassword,
         password,
@@ -56,7 +56,6 @@ if (userFormData) {
 if (userPasswordForm) {
   userPasswordForm.addEventListener('submit', async e => {
     e.preventDefault();
-    console.log('hey from userpasswordform');
     document.querySelector('.btn-on-save').textContent = 'Updating...';
     const currentPassword = document.getElementById('password-current').value;
     const password = document.getElementById('password').value;

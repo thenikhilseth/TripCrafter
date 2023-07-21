@@ -45,7 +45,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     role: req.body.role
   }); //or User.save(req.body)
   url = `${req.protocol}://${req.get('host')}/me`;
-  console.log(url);
+  // console.log(url);
   await new Email(newUser, url).sendWelcome();
   sendToken(newUser, 202, res);
 });
@@ -102,7 +102,7 @@ exports.protectedRoute = catchAsync(async (req, res, next) => {
 
   try {
     payload = await verify(token, process.env.JWT_SECRET);
-    console.log(payload);
+    // console.log(payload);
   } catch {
     return next(new AppError('Incorrect Token', 401));
   }
@@ -145,7 +145,6 @@ exports.isLoggedIn = async (req, res, next) => {
 //////////////////LOGOUT/////////////////////////////
 
 exports.logout = (req, res) => {
-  console.log('Hello from logout');
   res.clearCookie('jwt');
   res.status(200).json({
     status: 'success'

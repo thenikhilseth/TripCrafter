@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Tour = require('./Models/tourModels');
 dotenv.config({ path: './config.env' }); //storing our variables in node js global variables
-const app = require('./appv3');
+const app = require('./app');
 
 const DBString = process.env.DATABASE.replace(
   '<password>',

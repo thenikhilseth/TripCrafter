@@ -42,7 +42,7 @@ class APIFeatures {
     const pageValue = this.queryString.page * 1 || 1; //we already save the value of req.query.page in constant 'page'in start
     const limitValue = this.queryString.limit * 1 || 100;
 
-    console.log(pageValue, limitValue);
+    // console.log(pageValue, limitValue);
 
     const skip = limitValue * (pageValue - 1);
 

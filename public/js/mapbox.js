@@ -7,12 +7,12 @@
 // const mapBox = document.getElementById('map');
 const locations = JSON.parse(document.getElementById('map').dataset.locations);
 //UNCOMMENT the below code to see the map.
-// mapboxgl.accessToken =
-//   'pk.eyJ1IjoidGhlbmlraGlsc2V0aDEiLCJhIjoiY2xqOTE3aXlsMHJvdzNpcG03c2pqMWZnNiJ9.HzKkecfhX1ZITOwoJFfXjQ';
-// var map = new mapboxgl.Map({
-//   container: 'map', //It will set the map to the element with ID set to 'map'. That element is present in tour.pug
-//   style: 'mapbox://styles/thenikhilseth1/clj92hrfm00ba01ny66sw3oh2'
-// });
+mapboxgl.accessToken =
+  'pk.eyJ1IjoidGhlbmlraGlsc2V0aDEiLCJhIjoiY2xqOTE3aXlsMHJvdzNpcG03c2pqMWZnNiJ9.HzKkecfhX1ZITOwoJFfXjQ';
+var map = new mapboxgl.Map({
+  container: 'map', //It will set the map to the element with ID set to 'map'. That element is present in tour.pug
+  style: 'mapbox://styles/thenikhilseth1/clj92hrfm00ba01ny66sw3oh2'
+});
 
 const bounds = new mapboxgl.LngLatBounds();
 

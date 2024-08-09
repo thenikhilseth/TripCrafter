@@ -47,7 +47,7 @@ module.exports = class Email {
 
   //Send welcome email function
   async sendWelcome() {
-    await this.send('Welcome', 'Welcome to the Natours Family!');
+    await this.send('Welcome', 'Welcome to the TripCrafter Family!');
   }
 
   async sendPasswordReset() {

@@ -12,6 +12,7 @@ const tourSchema = new mongoose.Schema(
       maxlength: [40, 'A tour name must have less or equal then 40 characters'],
       minlength: [10, 'A tour name must have more or equal then 10 characters'],
       validate: {
+        //Validator to check if the string after removing spaces contain letters from A-Z
         validator: function(val) {
           return validator.isAlpha(val.replace(/ /g, ''));
         },
@@ -143,7 +144,7 @@ tourSchema.pre('save', function(next) {
 
 tourSchema.pre(/^find/, function(next) {
   //vl work for all find such as findById, findOne, find etc
-  this.find({ secretTour: { $ne: true } });
+  this.find({ secretTour: { $ne: true } }); //Only find the tours that are not secret.
   this.start = Date.now();
   next();
 });

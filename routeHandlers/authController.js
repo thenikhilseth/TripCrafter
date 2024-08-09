@@ -116,6 +116,7 @@ exports.protectedRoute = catchAsync(async (req, res, next) => {
 
   req.user = checkUser;
   res.locals.user = checkUser;
+  console.log(checkUser)
 
   next();
 
